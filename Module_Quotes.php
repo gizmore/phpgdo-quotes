@@ -62,11 +62,11 @@ final class Module_Quotes extends GDO_Module
         if ($this->cfgSidebar())
         {
             $num = $this->numQuotes();
-            GDT_Page::$INSTANCE->leftNav->addField(
+            GDT_Page::instance()->leftBar()->addField(
                 GDT_Link::make('link_add_quote')->href(href('Quotes', 'Add')));
-            GDT_Page::$INSTANCE->leftNav->addField(
+            GDT_Page::instance()->leftBar()->addField(
                 GDT_Link::make('link_random_quote')->href(href('Quotes', 'Rand')));
-            GDT_Page::$INSTANCE->leftNav->addField(
+            GDT_Page::instance()->leftBar()->addField(
                 GDT_Link::make('link_quotes')->label('link_quotes', [$num])->href(href('Quotes', 'Table')));
         }
     }
