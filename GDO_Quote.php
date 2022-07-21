@@ -83,7 +83,7 @@ final class GDO_Quote extends GDO
     ##############
     ### Render ###
     ##############
-    public function renderCard()
+    public function renderCard() : string
     {
         return GDT_Template::php('Quotes', 'quote_card.php', ['gdo' => $this]);
     }
