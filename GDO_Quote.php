@@ -6,7 +6,7 @@ use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
 use GDO\User\GDT_Realname;
 use GDO\User\GDT_User;
-use GDO\Vote\WithLikes;
+use GDO\Votes\WithLikes;
 use GDO\User\GDO_User;
 use GDO\UI\GDT_Message;
 use GDO\Core\GDT_AutoInc;

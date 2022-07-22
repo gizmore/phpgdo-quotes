@@ -1,7 +1,7 @@
 <?php
 namespace GDO\Quotes;
 
-use GDO\Vote\GDO_LikeTable;
+use GDO\Votes\GDO_LikeTable;
 
 /**
  * The quote likes table.
