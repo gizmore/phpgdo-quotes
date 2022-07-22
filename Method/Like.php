@@ -6,7 +6,7 @@ use GDO\Quotes\GDO_QuoteLikes;
 
 final class Like extends \GDO\Vote\Method\Like
 {
-    public function isCLI() { return true; }
+    public function isCLI() : bool { return true; }
     public function getLikeTableClass() { return GDO_QuoteLikes::class; }
     
     public function gdoParameters() : array
