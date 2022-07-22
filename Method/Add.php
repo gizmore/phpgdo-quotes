@@ -34,7 +34,7 @@ final class Add extends MethodForm
     {
         $quote = GDO_Quote::blank($form->getFormVars())->insert();
         
-        Website::redirectMessage(
+        $this->redirectMessage(
             'msg_quote_added', [$quote->getID()],
             href('Quotes', 'Table'));
     }
