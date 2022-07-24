@@ -25,7 +25,10 @@ final class Module_Quotes extends GDO_Module
     
     public function onLoadLanguage() : void { $this->loadLanguage('lang/quotes'); }
 
-    public function getDependencies() : array { return ['Vote']; }
+    public function getDependencies() : array
+    {
+    	return ['Vote', 'Realname'];
+    }
     
     public function getClasses() : array
     {

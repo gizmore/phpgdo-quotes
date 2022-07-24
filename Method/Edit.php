@@ -14,7 +14,7 @@ final class Edit extends MethodCrud
         return href('Quotes', 'Table');
     }
 
-    public function gdoTable()
+    public function gdoTable() : GDO
     {
         return GDO_Quote::table();
     }

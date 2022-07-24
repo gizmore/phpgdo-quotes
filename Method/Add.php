@@ -3,6 +3,7 @@ namespace GDO\Quotes\Method;
 
 use GDO\Form\GDT_Form;
 use GDO\Form\MethodForm;
+use GDO\Core\GDO;
 use GDO\Core\Website;
 use GDO\Quotes\GDO_Quote;
 use GDO\Form\GDT_AntiCSRF;
@@ -10,7 +11,7 @@ use GDO\Form\GDT_Submit;
 
 final class Add extends MethodForm
 {
-    public function gdoTable()
+    public function gdoTable() : GDO
     {
         return GDO_Quote::table();
     }

@@ -17,8 +17,8 @@ return [
     'link_random_quote' => 'Random Quote',
     
     # Table
-    'mtitle_quotes_table' => 'Quotes',
-    'mdescr_quotes_table' => 'An overview of all Quotes.',
+    'mt_quotes_table' => 'Quotes',
+    'md_quotes_table' => 'An overview of all Quotes.',
     'list_quotes_table' => '%s Quotes found',
     
     # Add
@@ -27,11 +27,11 @@ return [
     'msg_quote_added' => 'The quote has been added as ID:%s.',
     
     # View
-    'mtitle_quotes_view' => 'View a quote',
+    'mt_quotes_view' => 'View a quote',
     
     # Like
-    'mtitle_quotes_like' => 'Like a quote',
+    'mt_quotes_like' => 'Like a quote',
     
     # Dislike
-    'mtitle_quotes_dislike' => 'Dislike a quote',
+    'mt_quotes_dislike' => 'Dislike a quote',
 ];
