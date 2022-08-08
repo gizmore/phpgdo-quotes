@@ -9,7 +9,7 @@ final class Edit extends MethodCrud
 {
     public function canCreate(GDO $table) { return false; }
     
-    public function hrefList()
+    public function hrefList() : string
     {
         return href('Quotes', 'Table');
     }

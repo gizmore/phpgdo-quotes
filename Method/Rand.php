@@ -12,7 +12,7 @@ final class Rand extends MethodRandomCard
         return GDO_Quote::table();
     }
     
-    public function getTitle()
+    public function getMethodTitle() : string
     {
         return t('link_random_quote');
     }
