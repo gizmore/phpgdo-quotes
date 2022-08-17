@@ -1,10 +1,10 @@
 <?php
 namespace GDO\Quotes;
 
+use GDO\Address\GDT_Realname;
 use GDO\Core\GDO;
 use GDO\Core\GDT_CreatedAt;
 use GDO\Core\GDT_CreatedBy;
-use GDO\Realname\GDT_Realname;
 use GDO\User\GDT_User;
 use GDO\Votes\WithLikes;
 use GDO\User\GDO_User;
