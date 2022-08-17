@@ -27,7 +27,7 @@ final class Module_Quotes extends GDO_Module
 
     public function getDependencies() : array
     {
-    	return ['Vote', 'Realname'];
+    	return ['Address', 'Votes'];
     }
     
     public function getClasses() : array
