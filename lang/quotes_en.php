@@ -1,4 +1,5 @@
 <?php
+namespace GDO\Quotes\lang;
 return [
     
     # Config

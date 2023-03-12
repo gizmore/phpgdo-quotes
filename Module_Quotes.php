@@ -13,7 +13,7 @@ use GDO\UI\GDT_Link;
  * Quotes are likable
  * 
  * @author gizmore
- * @version 6.10.3
+ * @version 7.0.2
  * @since 6.10.3
  */
 final class Module_Quotes extends GDO_Module
@@ -27,7 +27,10 @@ final class Module_Quotes extends GDO_Module
 
     public function getDependencies() : array
     {
-    	return ['Address', 'Votes'];
+    	return [
+    		'Address',
+    		'Votes',
+    	];
     }
     
     public function getClasses() : array
@@ -51,11 +54,11 @@ final class Module_Quotes extends GDO_Module
             GDT_Level::make('quote_likes_minscore')->initial('0'),
         ];
     }
-    public function cfgSidebar() { return $this->getConfigVar('quote_sidebar'); }
-    public function cfgLikes() { return $this->getConfigVar('quote_likes'); }
-    public function cfgGuestLikes() { return $this->getConfigVar('quote_guest_likes'); }
-    public function cfgMaxLikes() { return $this->getConfigVar('quote_max_likes'); }
-    public function cfgLikesMinscore() { return $this->getConfigVar('quote_likes_minscore'); }
+    public function cfgSidebar(): bool { return $this->getConfigVar('quote_sidebar'); }
+    public function cfgLikes(): bool { return $this->getConfigVar('quote_likes'); }
+    public function cfgGuestLikes(): bool { return $this->getConfigVar('quote_guest_likes'); }
+    public function cfgMaxLikes(): int { return $this->getConfigVar('quote_max_likes'); }
+    public function cfgLikesMinscore(): int { return $this->getConfigVar('quote_likes_minscore'); }
     
     ###############
     ### Sidebar ###
@@ -77,7 +80,7 @@ final class Module_Quotes extends GDO_Module
     #############
     ### Cache ###
     #############
-    public function numQuotes()
+    public function numQuotes(): int
     {
         return GDO_Quote::table()->countWhere("quote_deleted IS NULL");
     }
