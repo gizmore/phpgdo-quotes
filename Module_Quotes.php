@@ -7,6 +7,7 @@ use GDO\Core\GDT_UInt;
 use GDO\User\GDT_Level;
 use GDO\UI\GDT_Page;
 use GDO\UI\GDT_Link;
+use GDO\DB\Cache;
 
 /**
  * Quote/Oneliner module.
@@ -68,12 +69,10 @@ final class Module_Quotes extends GDO_Module
         if ($this->cfgSidebar())
         {
             $num = $this->numQuotes();
-            GDT_Page::instance()->leftBar()->addField(
-                GDT_Link::make('link_add_quote')->href(href('Quotes', 'Add')));
-            GDT_Page::instance()->leftBar()->addField(
-                GDT_Link::make('link_random_quote')->href(href('Quotes', 'Rand')));
-            GDT_Page::instance()->leftBar()->addField(
-                GDT_Link::make('link_quotes')->label('link_quotes', [$num])->href(href('Quotes', 'Table')));
+            GDT_Page::instance()->leftBar()->addFields(
+                GDT_Link::make('link_add_quote')->icon('create')->href(href('Quotes', 'Add')),
+                GDT_Link::make('link_random_quote')->icon('quote')->href(href('Quotes', 'Rand')),
+            	GDT_Link::make('link_quotes')->icon('quote')->text('link_quotes', [$num])->href(href('Quotes', 'Table')));
         }
     }
 
@@ -82,7 +81,13 @@ final class Module_Quotes extends GDO_Module
     #############
     public function numQuotes(): int
     {
-        return GDO_Quote::table()->countWhere("quote_deleted IS NULL");
+    	$key = 'gdo_quote_count';
+    	if (null === ($count = Cache::get($key)))
+    	{
+    		$count = GDO_Quote::table()->countWhere("quote_deleted IS NULL");
+    		Cache::set($key, $count);
+    	}
+        return $count;
     }
     
 }
