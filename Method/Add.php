@@ -1,22 +1,17 @@
 <?php
 namespace GDO\Quotes\Method;
 
-use GDO\Form\GDT_Form;
-use GDO\Form\MethodForm;
 use GDO\Core\GDO;
-use GDO\Quotes\GDO_Quote;
 use GDO\Form\GDT_AntiCSRF;
+use GDO\Form\GDT_Form;
 use GDO\Form\GDT_Submit;
+use GDO\Form\MethodForm;
+use GDO\Quotes\GDO_Quote;
 
 final class Add extends MethodForm
 {
 
-	public function gdoTable(): GDO
-	{
-		return GDO_Quote::table();
-	}
-
-	public function getMethodTitle() : string
+	public function getMethodTitle(): string
 	{
 		return t('link_add_quote');
 	}
@@ -35,14 +30,18 @@ final class Add extends MethodForm
 			->label('btn_create'));
 	}
 
+	public function gdoTable(): GDO
+	{
+		return GDO_Quote::table();
+	}
+
 	public function formValidated(GDT_Form $form)
 	{
 		$quote = GDO_Quote::blank($form->getFormVars())->insert();
 
 		$this->redirectMessage('msg_quote_added', [
-			$quote->getID()
+			$quote->getID(),
 		], href('Quotes', 'Table'));
 	}
 
 }
-

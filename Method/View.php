@@ -7,9 +7,10 @@ use GDO\UI\MethodCard;
 
 final class View extends MethodCard
 {
-    public function gdoTable() : GDO
-    {
-        return GDO_Quote::table();
-    }
+
+	public function gdoTable(): GDO
+	{
+		return GDO_Quote::table();
+	}
 
 }

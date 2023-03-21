@@ -7,17 +7,18 @@ use GDO\Quotes\GDO_Quote;
 
 final class Edit extends MethodCrud
 {
-    public function canCreate(GDO $table) { return false; }
-    
-    public function hrefList() : string
-    {
-        return href('Quotes', 'Table');
-    }
 
-    public function gdoTable() : GDO
-    {
-        return GDO_Quote::table();
-    }
+	public function canCreate(GDO $table) { return false; }
 
-    
+	public function hrefList(): string
+	{
+		return href('Quotes', 'Table');
+	}
+
+	public function gdoTable(): GDO
+	{
+		return GDO_Quote::table();
+	}
+
+
 }
