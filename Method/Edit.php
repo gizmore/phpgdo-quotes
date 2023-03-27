@@ -8,7 +8,7 @@ use GDO\Quotes\GDO_Quote;
 final class Edit extends MethodCrud
 {
 
-	public function canCreate(GDO $table) { return false; }
+	public function canCreate(GDO $table): bool { return false; }
 
 	public function hrefList(): string
 	{

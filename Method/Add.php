@@ -2,6 +2,7 @@
 namespace GDO\Quotes\Method;
 
 use GDO\Core\GDO;
+use GDO\Core\GDT;
 use GDO\Form\GDT_AntiCSRF;
 use GDO\Form\GDT_Form;
 use GDO\Form\GDT_Submit;
@@ -35,7 +36,7 @@ final class Add extends MethodForm
 		return GDO_Quote::table();
 	}
 
-	public function formValidated(GDT_Form $form)
+	public function formValidated(GDT_Form $form): GDT
 	{
 		$quote = GDO_Quote::blank($form->getFormVars())->insert();
 
