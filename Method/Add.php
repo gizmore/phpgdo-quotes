@@ -17,7 +17,7 @@ final class Add extends MethodForm
 		return t('link_add_quote');
 	}
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$table = $this->gdoTable();
 		$form->addFields(
